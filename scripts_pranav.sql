@@ -41,3 +41,13 @@ SELECT CASE WHEN EXTRACT(DOW FROM orderdatetime) IN (0,6) THEN 'Weekend' ELSE 'W
        SUM(costtotal) AS total_revenue, COUNT(*) AS total_orders
 FROM orders
 GROUP BY day_type;
+
+--  7. Total quantity of each ingredient used in the 'Taro Milk Tea' menu item
+SELECT 
+    m.name AS drink, 
+    i.name AS ingredient, 
+    mi."itemquantity" AS amount
+FROM menu m
+JOIN menu_items mi ON m."menuid" = mi."menuid"
+JOIN inventory i ON mi."inventoryid" = i."inventoryid"
+WHERE m.name = 'Taro Milk Tea'; 
