@@ -39,7 +39,7 @@ inventory_names = [
 ]
 
 NUM_INVENTORY_ITEMS = len(inventory_names)
-INVENTORY_ITEMS = []
+inventory_items = []
 
 
 for i, name in enumerate(inventory_names, start=1):
@@ -79,10 +79,104 @@ for i in range(NUM_MENU_ITEMS):
 # --- MENU_ITEM (bridge table) ---
 menu_item_bridge = []
 bridge_id = 1
-for menu_id in range(1, NUM_MENU_ITEMS + 1):
-    ingredients_used = random.sample(range(1, NUM_INVENTORY_ITEMS + 1), random.randint(3, 6))
-    for inv_id in ingredients_used:
-        menu_item_bridge.append([bridge_id, inv_id, menu_id, random.randint(1, 3)])
+
+#Always used
+CUP = 1
+LID = 2
+STRAW = 3
+BLACK_TEA = 4
+GREEN_TEA = 5
+OOLONG_TEA = 6
+MILK = 7
+ALMOND_MILK = 8
+OAT_MILK = 9
+BOBA = 10
+BROWN_SUGAR = 11
+HONEY = 12
+SIMPLE_SYRUP = 13
+TARO = 14
+MATCHA = 15
+THAI = 16
+WINTERMELON = 17
+PASSIONFRUIT = 18
+LYCHEE = 19
+PEACH = 20
+MANGO = 21
+STRAWBERRY = 22
+GUAVA = 23
+PINEAPPLE = 24
+RED_BEAN = 25
+
+for menu in menu_items:
+    menu_id = menu[0]
+    drink_name = menu[1]
+
+    ingredients = {CUP, LID, STRAW}
+
+    # Base Tea Logic
+    if "Green Tea" in drink_name:
+        ingredients.add(GREEN_TEA)
+    elif "Oolong" in drink_name:
+        ingredients.add(OOLONG_TEA)
+    else:
+        ingredients.add(BLACK_TEA)
+
+    # Milk Teas
+    if "Milk Tea" in drink_name:
+        ingredients.add(MILK)
+        ingredients.add(BOBA)
+
+    # Specific Flavors
+    if "Taro" in drink_name:
+        ingredients.add(TARO)
+
+    if "Matcha" in drink_name:
+        ingredients.add(MATCHA)
+
+    if "Thai" in drink_name:
+        ingredients.add(THAI)
+
+    if "Wintermelon" in drink_name:
+        ingredients.add(WINTERMELON)
+
+    if "Passionfruit" in drink_name:
+        ingredients.add(PASSIONFRUIT)
+
+    if "Lychee" in drink_name:
+        ingredients.add(LYCHEE)
+
+    if "Peach" in drink_name:
+        ingredients.add(PEACH)
+
+    if "Mango" in drink_name:
+        ingredients.add(MANGO)
+
+    if "Strawberry" in drink_name:
+        ingredients.add(STRAWBERRY)
+
+    if "Guava" in drink_name:
+        ingredients.add(GUAVA)
+
+    if "Pineapple" in drink_name:
+        ingredients.add(PINEAPPLE)
+
+    if "Red Bean" in drink_name:
+        ingredients.add(RED_BEAN)
+
+    if "Brown Sugar" in drink_name:
+        ingredients.add(BROWN_SUGAR)
+
+    if "Honey" in drink_name:
+        ingredients.add(HONEY)
+
+    # Add ingredients to bridge table
+    for inv_id in ingredients:
+        menu_item_bridge.append([
+            bridge_id,
+            inv_id,
+            menu_id,
+            random.randint(1, 3)
+        ])
         bridge_id += 1
 
 with open("menu_item.csv", "w", newline="") as f:
