@@ -19,7 +19,7 @@ Note: the database design document also describes a **`menu_item` recipe/bridge 
 
 ## UML diagram
 
-![UML Diagram](UML.png)
+![UML Diagram](assets/UML.png)
 
 ## Repo contents
 
