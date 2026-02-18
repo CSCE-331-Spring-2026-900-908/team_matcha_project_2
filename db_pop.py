@@ -24,11 +24,28 @@ def random_time():
     return hour, minute
 
 # --- INVENTORY ---
-inventory_items = []
-for i in range(1, NUM_INVENTORY_ITEMS + 1):
+inventory_names = [
+    "Cup (16oz)", "Cup Lid", "Straw",
+    "Black Tea Leaves", "Green Tea Leaves", "Oolong Tea Leaves",
+    "Milk", "Almond Milk", "Oat Milk",
+    "Tapioca Pearls (Boba)", "Brown Sugar Syrup",
+    "Honey", "Simple Syrup",
+    "Taro Powder", "Matcha Powder",
+    "Thai Tea Mix", "Wintermelon Syrup",
+    "Passionfruit Syrup", "Lychee Syrup",
+    "Peach Syrup", "Mango Syrup",
+    "Strawberry Syrup", "Guava Syrup",
+    "Pineapple Syrup", "Red Bean"
+]
+
+NUM_INVENTORY_ITEMS = len(inventory_names)
+INVENTORY_ITEMS = []
+
+
+for i, name in enumerate(inventory_names, start=1):
     inventory_items.append([
         i,
-        f"Ingredient_{i}",
+        name,
         round(random.uniform(0.50, 5.00), 2),
         random.randint(500, 2000),
         random.randint(1, 5)
