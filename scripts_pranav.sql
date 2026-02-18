@@ -1,11 +1,12 @@
 -- 1. Total revenue and total number of orders for each weekday
 SELECT
-    TO_CHAR(orderdatetime, 'Day') AS weekday,
+    EXTRACT(DOW FROM orderdatetime) AS weekday_num,
+    TO_CHAR(orderdatetime, 'Day') AS weekday_name,
     SUM(costtotal) AS total_revenue,
     COUNT(*) AS total_orders
 FROM orders
-GROUP BY weekday
-ORDER BY total_revenue DESC;
+GROUP BY weekday_num, weekday_name
+ORDER BY weekday_num;
 
 -- 2. Average order cost overall
 SELECT AVG(costtotal) AS avg_order_cost
