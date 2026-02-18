@@ -5,3 +5,6 @@ SELECT
 FROM orders
 GROUP BY weekday
 ORDER BY total_revenue DESC;
+
+SELECT AVG(costtotal) AS avg_order_cost
+FROM orders;
