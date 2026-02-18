@@ -1,3 +1,10 @@
+DROP TABLE IF EXISTS inventory;
+DROP TABLE IF EXISTS menu;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS menu_items;
+
 CREATE TABLE inventory (
     inventoryID INT PRIMARY KEY, 
     name VARCHAR(100), 
@@ -35,4 +42,11 @@ CREATE TABLE order_items (
     orderID INT,
     quantity INT,
     cost DECIMAL(10,2)
+);
+
+CREATE TABLE menu_items (
+    ID INT PRIMARY KEY,
+    inventoryID INT,
+    menuID INT,
+    itemQuantity INT
 );

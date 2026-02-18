@@ -1,0 +1,26 @@
+inventoryID,name,cost,inventoryNum,useAverage
+1,Cup (16oz),1.32,949,3
+2,Cup Lid,2.99,1704,2
+3,Straw,1.44,1992,3
+4,Black Tea Leaves,2.07,1002,4
+5,Green Tea Leaves,4.31,617,2
+6,Oolong Tea Leaves,1.38,1949,2
+7,Milk,1.25,1137,4
+8,Almond Milk,3.78,1250,4
+9,Oat Milk,4.63,1781,3
+10,Tapioca Pearls (Boba),3.22,1734,4
+11,Brown Sugar Syrup,2.7,1015,3
+12,Honey,1.14,1488,4
+13,Simple Syrup,4.59,1697,4
+14,Taro Powder,2.98,1197,2
+15,Matcha Powder,0.85,1444,5
+16,Thai Tea Mix,3.23,1873,3
+17,Wintermelon Syrup,1.38,1213,2
+18,Passionfruit Syrup,0.85,574,2
+19,Lychee Syrup,4.04,1936,4
+20,Peach Syrup,4.7,807,4
+21,Mango Syrup,3.9,1286,1
+22,Strawberry Syrup,4.03,1924,2
+23,Guava Syrup,1.98,716,3
+24,Pineapple Syrup,3.0,643,3
+25,Red Bean,4.73,948,1
